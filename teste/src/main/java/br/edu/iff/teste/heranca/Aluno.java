@@ -14,6 +14,9 @@ public class Aluno {
     Date dtNascimento;
     long matricula, rendaFamiliar;
     Endereco endResidencial;
+    boolean concluiuDisciplinas;
+    boolean documentosOK;
+    boolean nadaConsta;
     
     public int idade() {
         Date hoje = new Date();
@@ -32,4 +35,13 @@ public class Aluno {
         }
         
     }
+    
+    public boolean podeSolicitarDiploma() {
+        if (concluiuDisciplinas && documentosOK && nadaConsta) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
